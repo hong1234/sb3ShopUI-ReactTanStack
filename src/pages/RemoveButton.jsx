@@ -1,9 +1,9 @@
 import { useContext } from "react";
 // import { useNavigate } from "react-router";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { AppContext } from "../AppContext";
-import { removeItem } from "../api/removeItem";
 // import { isLogin } from './Auth';
+import { removeItem } from "../api/removeItem";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export default function RemoveButton({ productId }) {
   // const navigate = useNavigate();
@@ -53,16 +53,8 @@ export default function RemoveButton({ productId }) {
     //   } else {
     //     navigate("/login");
     //   }
-
-    // if (e && e.stopPropagation) e.stopPropagation();
-    // e.cancelBubble = true;
     mutate(productId);
   };
-
-  //   const handleClick = (productId, e) => {
-  //     if(e && e.stopPropagation) e.stopPropagation();
-  //     mutate(productId)
-  //   }
 
   return (
     <>
@@ -72,5 +64,3 @@ export default function RemoveButton({ productId }) {
     </>
   );
 }
-
-// memo(AddButton);

@@ -12,13 +12,7 @@ function NewProductForm() {
   const [titleInput, setTitleInput] = useState("");
   const [contentInput, setContentInput] = useState("");
 
-  // const { isLoading, isSuccess, data: products } = useQuery({
-  //   queryKey: ['products'],
-  //   queryFn: getProducts
-  // });
-
   const queryClient = useQueryClient();
-
   const { mutate } = useMutation({
     mutationFn: saveProduct,
     onSuccess: () => {
@@ -69,7 +63,9 @@ function NewProductForm() {
   console.log("product-form rendering ..");
   return (
     <div>
-      <h4 className="bg-primary text-white text-center p-2">Admin</h4>
+      <h4 className="bg-primary text-white text-center p-2 col-12 col-sm-12 col-md-6">
+        Admin
+      </h4>
       {isOpen ? (
         <form className="" onSubmit={handleSubmit}>
           <div className="col-12">

@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 
 function ProductList({ products }) {
-  // console.log('products-page rendering ..');
-
   if (!Array.isArray(products)) {
     return <> </>;
   }

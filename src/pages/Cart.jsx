@@ -26,7 +26,9 @@ function Cart() {
 
   return (
     <div>
-      <h4 className="bg-primary text-white text-center p-2">Cart</h4>
+      <h4 className="bg-primary text-white text-center p-2 col-12 col-sm-12 col-md-6">
+        Cart
+      </h4>
       <CartSummary />
       <Link to="/shop/products">
         <button type="button" className="btn btn-primary">
@@ -42,7 +44,7 @@ function Cart() {
         <div />
       )}
 
-      <div className="">
+      <div className="col-12 col-sm-12 col-md-6">
         <ul className="list-group">
           {cart.items.map((item) => (
             <li key={item.productId} className="list-group-item">
