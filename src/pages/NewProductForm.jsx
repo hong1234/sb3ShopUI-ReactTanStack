@@ -68,7 +68,7 @@ function NewProductForm() {
       </h4>
       {isOpen ? (
         <form className="" onSubmit={handleSubmit}>
-          <div className="col-12">
+          <div className="col-12 col-sm-12 col-md-6">
             <label className="form-label">Title:</label>
             <input
               type="text"
@@ -78,7 +78,7 @@ function NewProductForm() {
               className="form-control"
             />
           </div>
-          <div className="col-12">
+          <div className="col-12 col-sm-12 col-md-6">
             <label className="form-label">Description:</label>
             <input
               type="text"

@@ -13,14 +13,12 @@ function Shop() {
         Shop
       </h4>
       <div>
-        <p>
-          <CartSummary />
-          <Link to="/shop/cart" className="">
-            <button type="button" className="btn btn-primary">
-              Go to Cart
-            </button>
-          </Link>
-        </p>
+        <CartSummary />
+        <Link to="/shop/cart" className="">
+          <button type="button" className="btn btn-primary">
+            Go to Cart
+          </button>
+        </Link>
       </div>
 
       {/* <div className="row"> */}

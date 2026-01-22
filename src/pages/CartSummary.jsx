@@ -5,7 +5,9 @@ function CartSummary() {
   const { state } = useContext(AppContext);
   return (
     <>
-      <h5>Items in Cart: {state.count}</h5>
+      <button type="button" className="btn btn-secondary">
+        Items in Cart: {state.count}
+      </button>
     </>
   );
 }
