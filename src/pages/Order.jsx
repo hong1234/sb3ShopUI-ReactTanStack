@@ -29,7 +29,7 @@ const Order = () => {
             <li key={item.productId} className="list-group-item">
               <p className="fw-bold">{item.title}</p>
               <p className="">productID: {item.productId}</p>
-              <p className="">unitPrice: {item.unitPrice}</p>
+              <p className="">unitPrice: {item.unitPrice} $</p>
               <p className="">Quantity: {item.qty}</p>
             </li>
           ))}
