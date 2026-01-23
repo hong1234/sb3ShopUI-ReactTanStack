@@ -16,9 +16,7 @@ const Order = () => {
   // console.log("detail rendering ..");
   return (
     <div>
-      <h4 className="bg-primary text-white text-center p-2 col-12 col-sm-12 col-md-6">
-        Order
-      </h4>
+      <h4 className="bg-primary text-white text-center p-2">Order</h4>
       <div className="">
         <h5 className="fw-bold">OrderID: {order.orderId}</h5>
         <p className="fw-bold">Customer-Address: {order.customerAddress}</p>

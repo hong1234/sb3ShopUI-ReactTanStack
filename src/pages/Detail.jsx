@@ -17,16 +17,18 @@ const Detail = () => {
 
   // console.log("detail rendering ..");
   return product == null ? null : (
-    <div>
+    <div className="">
       <div className="card text-white bg-success mb-3">
         <div className="card-header">Detail</div>
         <div className="card-body">
-          <p className="card-title fw-bold">{product.title}</p>
-          <p className="card-text">{product.description}</p>
-          <p className="card-text">{product.unitPrice} $</p>
-          {/* <button onClick={handleAddItem}>add to cart</button> */}
-          {/* <button onClick={() => mutate(productId)}>add to cart</button> */}
-          <AddButton productId={productId} />
+          <div className="">
+            <p className="card-title fw-bold">{product.title}</p>
+            <p className="card-text">{product.description}</p>
+            <p className="card-text">{product.unitPrice} $</p>
+            {/* <button onClick={handleAddItem}>add to cart</button> */}
+            {/* <button onClick={() => mutate(productId)}>add to cart</button> */}
+            <AddButton productId={productId} />
+          </div>
         </div>
       </div>
     </div>

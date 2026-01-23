@@ -2,7 +2,7 @@ function Dummy() {
   // console.log("dummy rendering ..");
   return (
     <>
-      {/* <h4 className="bg-primary text-white text-center p-2">Dummy</h4> */}
+      <h4 className="bg-primary text-white text-center p-2">Dummy</h4>
     </>
   );
 }
