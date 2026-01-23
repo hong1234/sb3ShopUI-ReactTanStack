@@ -50,7 +50,7 @@ function NewProductForm() {
         description: contentInput,
         supplier: "Hong Co",
         searchkeys: titleInput.toLowerCase(),
-        image: "/images/test.jpg",
+        image: "/images/ThinkingIn.jpg",
         unitPrice: "29.99",
         categoryId: "9d927bff-8d5b-4929-8c26-a9be00173adc",
       };

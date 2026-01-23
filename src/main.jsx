@@ -15,7 +15,6 @@ import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import NewProductForm from "./pages/NewProductForm";
 import Detail from "./pages/Detail";
-import Dummy from "./pages/Dummy";
 import Order from "./pages/Order";
 
 const queryClient = new QueryClient();
@@ -38,10 +37,6 @@ const router = createBrowserRouter([
         path: "/shop/products",
         element: <Shop />,
         children: [
-          // {
-          //   index: true,
-          //   element: <Dummy />,
-          // },
           {
             path: "/shop/products/:productId",
             element: <Detail />,
