@@ -15,28 +15,7 @@ const Detail = () => {
     return <div className="w-96 mx-auto mt-6">Loading ...</div>;
   }
 
-  // console.log("detail rendering ..");
   return product == null ? null : (
-    // <div className="card text-white bg-success mb-3">
-    //   <div className="card-header">Detail</div>
-    //   <div className="card-body">
-    //     <div className="row">
-    //       <img
-    //         className="col-12 col-sm-4 col-md-4"
-    //         src={product.image}
-    //         alt="photo"
-    //       />
-    //       <div className="col-12 col-sm-8 col-md-8">
-    //         <p className="card-title fw-bold">{product.title}</p>
-    //         <p className="card-text">{product.description}</p>
-    //         <p className="card-text">{product.unitPrice} $</p>
-    //         {/* <button onClick={handleAddItem}>add to cart</button> */}
-    //         {/* <button onClick={() => mutate(productId)}>add to cart</button> */}
-    //         <AddButton productId={productId} />
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
     <div className="row">
       <img
         className="col-12 col-sm-4 col-md-4"
