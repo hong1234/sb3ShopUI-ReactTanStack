@@ -28,11 +28,11 @@ function Shop() {
         </div>
       </div>
       <div className="row">
-        <div className="col-12 col-sm-12 col-md-6">
+        <div className="col-12 col-sm-12 col-md-4">
           <SearchForm setProducts={setProducts} />
           <ProductList products={products} />
         </div>
-        <div className="col-12 col-sm-12 col-md-6">
+        <div className="col-12 col-sm-12 col-md-8">
           <Outlet />
         </div>
       </div>
