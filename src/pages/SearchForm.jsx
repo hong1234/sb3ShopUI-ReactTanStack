@@ -1,40 +1,51 @@
 import { useState, useEffect } from "react";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { searchProducts } from "../api/searchProducts";
+import {
+  useQuery,
+  // useQueryClient
+} from "@tanstack/react-query";
 
 const SearchForm = ({ setProducts }) => {
   // const SearchForm = ({ setSearchText }) => {
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
   const [filterText, setFilterText] = useState("java");
+  const [ready, setReady] = useState(false);
+
   const submitHandle = (e) => {
     e.preventDefault();
+    if (filterText.length > 0) {
+      setReady(true);
+    }
+
     // setSearchText(filterText);
-    queryClient.invalidateQueries(["products"]);
+    // queryClient.invalidateQueries(["products"]);
     // const cached = queryClient.getQueryData(["products"]);
     // setProducts(products);
   };
 
   const {
-    isLoading,
+    // isLoading,
     isSuccess,
     data: products,
   } = useQuery({
     queryKey: ["products"],
     queryFn: () => searchProducts(filterText),
+    enabled: ready,
   });
 
   useEffect(
     () => {
       if (isSuccess) {
+        setReady(false);
         setProducts(products);
       }
     },
-    // , [isSuccess]
+    //  [isSuccess]
   );
 
-  if (isLoading || products === undefined) {
-    return <div className="w-96 mx-auto mt-6">Loading ...</div>;
-  }
+  // if (isPending || products === undefined) {
+  //   return <div className="w-96 mx-auto mt-6">Loading ...</div>;
+  // }
 
   return (
     <form onSubmit={submitHandle} className="input-group mb-3">
