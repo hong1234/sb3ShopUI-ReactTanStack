@@ -12,13 +12,13 @@ function Shop() {
   const [products, setProducts] = useState([]);
   return (
     <div>
-      <h4 className="bg-primary text-white text-center p-2">Shop</h4>
+      <h5 className="bg-primary text-white text-center p-2">Shop</h5>
       <div className="row">
         <div>
           <CartSummary />
           {state.count > 0 ? (
             <Link to="/shop/products/cart" className="">
-              <button type="button" className="btn btn-primary">
+              <button type="button" className="btn btn-secondary">
                 Show Cart
               </button>
             </Link>

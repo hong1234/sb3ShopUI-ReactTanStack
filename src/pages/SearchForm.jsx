@@ -55,7 +55,7 @@ const SearchForm = ({ setProducts }) => {
         onChange={(e) => setFilterText(e.target.value)}
         className="form-control"
       />
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" className="btn btn-secondary">
         Search
       </button>
     </form>

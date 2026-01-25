@@ -28,8 +28,12 @@ function Cart() {
     <>
       {cart.items.length > 0 ? (
         <>
-          <h4 className="bg-primary text-white text-center p-2">Cart</h4>
-          <button type="button" className="btn btn-primary" onClick={checkout}>
+          {/* <h5 className="bg-primary text-white text-center p-2">Cart</h5> */}
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={checkout}
+          >
             Checkout
           </button>
           <div className="">

@@ -44,17 +44,17 @@ export function Header() {
 
       <h4 className="bg-primary text-white p-2">H-Shop</h4>
       <Link to="">
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-secondary">
           Home
         </button>
       </Link>
       <Link to="/shop/products">
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-secondary">
           Shopping
         </button>
       </Link>
       <Link to="/admin/new">
-        <button type="button" className="btn btn-primary">
+        <button type="button" className="btn btn-secondary">
           Admin
         </button>
       </Link>
