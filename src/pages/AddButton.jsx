@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../AppContext";
+import { useNavigate } from "react-router";
 // import { isLogin } from './Auth';
 import { addItem } from "../api/addItem";
 import {
@@ -8,8 +9,19 @@ import {
 } from "@tanstack/react-query";
 
 export default function AddButton({ productId }) {
+  // const { pathname } = useLocation();
+  const navigate = useNavigate();
   // const queryClient = useQueryClient();
-  const { dispatch } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
+
+  const isLogin = () => {
+    // console.log('check login ...');
+    if (!state.loggedIn) {
+      // navigate('/login');
+      return false;
+    }
+    return true;
+  };
 
   //   const findQty = (cartItems, id) => {
   //     const idx = cartItems.findIndex((i) => i.id === id);
@@ -42,17 +54,18 @@ export default function AddButton({ productId }) {
   const add = (e) => {
     e.preventDefault();
     // if (mutate.isLoading) return; // Prevent double submission
-    //   if (isLogin()) {
-    //     const qty = getQty();
-    //     mutate({
-    //       id: product.id,
-    //       quantity: qty + 1,
-    //       unitPrice: product.price,
-    //     });
-    //   } else {
-    //     navigate("/login");
-    //   }
-    mutate(productId);
+    if (isLogin()) {
+      mutate(productId);
+      //     const qty = getQty();
+      //     mutate({
+      //       id: product.id,
+      //       quantity: qty + 1,
+      //       unitPrice: product.price,
+      //     });
+    } else {
+      navigate("/login");
+    }
+    // mutate(productId);
   };
 
   return (

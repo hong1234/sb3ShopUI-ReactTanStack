@@ -16,7 +16,7 @@ function Shop() {
       <div className="row">
         <div>
           <CartSummary />
-          {state.count > 0 ? (
+          {state.loggedIn && state.count > 0 ? (
             <Link to="/shop/products/cart" className="">
               <button type="button" className="btn btn-secondary">
                 Show Cart

@@ -23,6 +23,7 @@ const Detail = () => {
         alt="photo"
       />
       <div className="col-12 col-sm-8 col-md-8">
+        {/* <div className="bg-primary text-white text-center p-1" /> */}
         <p className="card-title fw-bold">{product.title}</p>
         <p className="card-text">{product.description}</p>
         <p className="card-text">{product.unitPrice} $</p>

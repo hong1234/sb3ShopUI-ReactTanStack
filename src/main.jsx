@@ -16,6 +16,8 @@ import Home from "./pages/Home";
 import NewProductForm from "./pages/NewProductForm";
 import Detail from "./pages/Detail";
 import Order from "./pages/Order";
+import Login from "./pages/Login";
+import Logout from "./pages/Logout";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/logout",
+        element: <Logout />,
+      },
       {
         index: true,
         element: <Home />,

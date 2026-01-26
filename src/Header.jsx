@@ -1,7 +1,11 @@
 import { Link, NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { AppContext } from "./AppContext";
+// import Login from "./pages/Login";
 
 export function Header() {
-  console.log("header rendering ..");
+  const { state } = useContext(AppContext);
+  // console.log("header rendering ..");
   return (
     <header className="">
       {/* <h1 className="text-2xl">React App</h1> */}
@@ -58,6 +62,24 @@ export function Header() {
           Admin
         </button>
       </Link>
+
+      {!state.loggedIn ? (
+        <Link to="/login" className="nav-right">
+          <button type="button" className="btn btn-secondary">
+            Login
+          </button>
+        </Link>
+      ) : // <div />
+      null}
+
+      {state.loggedIn ? (
+        <Link to="/logout" className="nav-right">
+          <button type="button" className="btn btn-secondary">
+            Logout
+          </button>
+        </Link>
+      ) : // <div />
+      null}
     </header>
   );
 }

@@ -5,11 +5,18 @@ import { createContext, useReducer } from "react";
 const cartState = {
   // state
   // products: [],
+  loggedIn: false,
   count: 0,
 };
 
 function productReducer(state, action) {
   switch (action.type) {
+    case "login":
+      return { ...state, loggedIn: true };
+
+    case "logout":
+      return { ...state, loggedIn: false };
+
     case "add":
       // const newProduct = {
       //   id: uuidv4(),

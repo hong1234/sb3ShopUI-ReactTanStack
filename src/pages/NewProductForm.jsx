@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   // useQuery,
   useMutation,
   useQueryClient,
 } from "@tanstack/react-query";
 import { saveProduct } from "../api/saveProduct";
-import ProductList from "./ProductList";
+import { useContext } from "react";
+import { AppContext } from "../AppContext";
+import { useNavigate } from "react-router";
 
 function NewProductForm() {
+  const navigate = useNavigate();
+  const { state } = useContext(AppContext);
   const [isOpen, setIsOpen] = useState(false);
   const [titleInput, setTitleInput] = useState("");
   const [contentInput, setContentInput] = useState("");
@@ -23,6 +27,13 @@ function NewProductForm() {
       console.error(err);
     },
   });
+
+  const isLogin = () => {
+    if (!state.loggedIn) {
+      return false;
+    }
+    return true;
+  };
 
   const handleTitleChange = (e) => {
     setTitleInput(e.currentTarget.value);
@@ -60,7 +71,15 @@ function NewProductForm() {
     }
   };
 
-  console.log("product-form rendering ..");
+  useEffect(() => {
+    if (!isLogin()) {
+      // setReady(false);
+      // setProducts(products);
+      navigate("/login");
+    }
+  }, []);
+
+  // console.log("product-form rendering ..");
   return (
     <div>
       <h5 className="bg-primary text-white text-center p-2">Admin</h5>
