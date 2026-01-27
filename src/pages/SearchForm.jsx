@@ -1,52 +1,45 @@
 import { useState, useEffect } from "react";
+// import { memo } from "react";
 import { searchProducts } from "../api/searchProducts";
 import {
   useQuery,
-  // useQueryClient
+  // useQueryClient,
 } from "@tanstack/react-query";
 
 const SearchForm = ({ setProducts }) => {
-  // const SearchForm = ({ setSearchText }) => {
   // const queryClient = useQueryClient();
   const [filterText, setFilterText] = useState("java");
-  const [ready, setReady] = useState(false);
-
-  const submitHandle = (e) => {
-    e.preventDefault();
-    if (filterText.length > 0) {
-      setReady(true);
-    }
-
-    // setSearchText(filterText);
-    // queryClient.invalidateQueries(["products"]);
-    // const cached = queryClient.getQueryData(["products"]);
-    // setProducts(products);
-  };
 
   const {
     // isLoading,
     isSuccess,
     data: products,
+    refetch,
   } = useQuery({
     queryKey: ["products"],
     queryFn: () => searchProducts(filterText),
-    enabled: ready,
+    enabled: false,
   });
 
-  useEffect(
-    () => {
-      if (isSuccess) {
-        setReady(false);
-        setProducts(products);
-      }
-    },
-    //  [isSuccess]
-  );
+  const submitHandle = (e) => {
+    e.preventDefault();
+    if (filterText.length > 0) {
+      refetch();
+      // queryClient.invalidateQueries(["products"]);
+    }
+  };
 
-  // if (isPending || products === undefined) {
+  useEffect(() => {
+    if (isSuccess) {
+      setProducts(products);
+    }
+  });
+
+  // if (isLoading || products === undefined) {
   //   return <div className="w-96 mx-auto mt-6">Loading ...</div>;
   // }
 
+  // console.log("form rendering ..");
   return (
     <form onSubmit={submitHandle} className="input-group mb-3">
       <input
@@ -60,6 +53,29 @@ const SearchForm = ({ setProducts }) => {
       </button>
     </form>
   );
+
+  //   const { data, isLoading, refetch } = useQuery({
+  //   queryKey: ["users"],
+  //   queryFn: fetchUsers,
+  //   enabled: false,
+  // });
+
+  // return (
+  //   <div>
+  //     <Link to={"/"}>home</Link>
+  //     <h1>Users</h1>
+
+  //     <button onClick={refetch}>fetch data</button>
+  //     <hr />
+
+  //     {isLoading && <h1>loading...</h1>}
+  //     {data?.data.map((user) => (
+  //       <p key={user.id}>{user.name}</p>
+  //     ))}
+  //   </div>
+  // );
 };
 
 export default SearchForm;
+
+// export default memo(SearchForm);

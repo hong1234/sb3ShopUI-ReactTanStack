@@ -5,6 +5,7 @@ function ProductList({ products }) {
     return <> </>;
   }
 
+  // console.log("list rendering ..");
   return (
     <div className="">
       <ul className="list-group">

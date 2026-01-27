@@ -10,6 +10,7 @@ import { AppContext } from "../AppContext";
 function Shop() {
   const { state } = useContext(AppContext);
   const [products, setProducts] = useState([]);
+  // console.log("shop rendering ..");
   return (
     <div>
       <h5 className="bg-primary text-white text-center p-2">Shop</h5>
@@ -22,9 +23,8 @@ function Shop() {
                 Show Cart
               </button>
             </Link>
-          ) : (
-            <div />
-          )}
+          ) : // <div />
+          null}
         </div>
       </div>
       <div className="row">
