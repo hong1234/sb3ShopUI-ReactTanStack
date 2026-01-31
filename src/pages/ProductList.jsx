@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 
 function ProductList({ products }) {
   if (!Array.isArray(products)) {
     return <> </>;
   }
 
-  // console.log("list rendering ..");
+  console.log("product list rendering ..");
   return (
     <div className="">
       <ul className="list-group">

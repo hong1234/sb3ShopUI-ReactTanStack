@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { searchProducts } from "../api/searchProducts";
 import {
   useQuery,
-  // useQueryClient,
+  // useQueryClient
 } from "@tanstack/react-query";
 
 const SearchForm = ({ setProducts }) => {
@@ -25,12 +25,15 @@ const SearchForm = ({ setProducts }) => {
     e.preventDefault();
     if (filterText.length > 0) {
       refetch();
-      // queryClient.invalidateQueries(["products"]);
     }
   };
 
   useEffect(() => {
     if (isSuccess) {
+      // queryClient.invalidateQueries(["products"]);
+      // queryClient.removeQueries(["products"]);
+      // queryClient.resetQueries(["products"]);
+      // queryClient.clear();
       setProducts(products);
     }
   });
@@ -39,7 +42,7 @@ const SearchForm = ({ setProducts }) => {
   //   return <div className="w-96 mx-auto mt-6">Loading ...</div>;
   // }
 
-  // console.log("form rendering ..");
+  console.log("form rendering ..");
   return (
     <form onSubmit={submitHandle} className="input-group mb-3">
       <input
@@ -77,5 +80,4 @@ const SearchForm = ({ setProducts }) => {
 };
 
 export default SearchForm;
-
 // export default memo(SearchForm);

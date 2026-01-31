@@ -23,3 +23,7 @@ git clone https://github.com/hong1234/springboot3ShopApi.git
 cd springboot3ShopApi
 
 ./mvnw spring-boot:run
+
+## good doc to tanstack client
+
+https://medium.com/@neungszad/what-is-difference-between-clear-vs-removequeries-vs-resetqueries-vs-queryinvalidate-from-384a53e79e06

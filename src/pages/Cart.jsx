@@ -1,24 +1,15 @@
-import { Link } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getCart } from "../api/getCart";
 import RemoveButton from "./RemoveButton";
-import { useNavigate } from "react-router";
-// import CartSummary from "./CartSummary";
+import CheckoutButton from "./CheckoutButton";
 
 function Cart() {
-  const navigate = useNavigate();
-
   const { isLoading, data: cart } = useQuery({
     queryKey: ["cart"],
     queryFn: getCart,
     // queryKey: ["cart", customerId],
     // queryFn: () => getCart(customerId),
   });
-
-  const checkout = (e) => {
-    e.preventDefault();
-    navigate("/shop/cart/" + cart.cartId + "/checkout");
-  };
 
   if (isLoading || cart === undefined) {
     return <div className="w-96 mx-auto mt-6">Loading ...</div>;
@@ -28,15 +19,8 @@ function Cart() {
     <>
       {cart.items.length > 0 ? (
         <>
-          {/* <h5 className="bg-primary text-white text-center p-2">Cart</h5> */}
-          {/* <div className="bg-primary text-white text-center p-2" /> */}
-          <button
-            type="button"
-            className="btn btn-secondary"
-            onClick={checkout}
-          >
-            Checkout
-          </button>
+          {/* <CheckoutButton cartId={cart.cartId} /> */}
+          <CheckoutButton />
           <div className="">
             <ul className="list-group">
               {cart.items.map((item) => (
@@ -51,9 +35,8 @@ function Cart() {
             </ul>
           </div>
         </>
-      ) : (
-        <div />
-      )}
+      ) : // <div />
+      null}
     </>
   );
 }

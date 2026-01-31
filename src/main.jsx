@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ContextProvider } from "./AppContext";
 
@@ -11,7 +11,7 @@ import App from "./App.jsx";
 import { ErrorPage } from "./pages/ErrorPage";
 import Shop from "./pages/Shop";
 import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
+// import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
 import NewProductForm from "./pages/NewProductForm";
 import Detail from "./pages/Detail";
@@ -56,14 +56,6 @@ const router = createBrowserRouter([
             element: <Cart />,
           },
         ],
-      },
-      // {
-      //   path: "/shop/cart",
-      //   element: <Cart />,
-      // },
-      {
-        path: "/shop/cart/:cartId/checkout",
-        element: <Checkout />,
       },
       {
         path: "/shop/orders/:orderId",

@@ -1,4 +1,4 @@
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link } from "react-router";
 import ProductList from "./ProductList";
 import SearchForm from "./SearchForm";
 import CartSummary from "./CartSummary";
