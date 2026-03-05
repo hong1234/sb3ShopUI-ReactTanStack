@@ -18,9 +18,9 @@ http://localhost:5173/
 
 ## run Rest-API Server App (Java)
 
-git clone https://github.com/hong1234/springboot3ShopApi.git
+git clone https://github.com/hong1234/springboot3ShopApiV2.git
 
-cd springboot3ShopApi
+cd springboot3ShopApiV2
 
 ./mvnw spring-boot:run
 
